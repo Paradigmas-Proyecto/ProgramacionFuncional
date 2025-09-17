@@ -60,8 +60,9 @@ El sistema permite obtener métricas sobre errores, tiempos de respuesta, uso de
 - MySQL
 
 ### Crear base de datos MySQL
-``sql
-CREATE DATABASE paradigmas;``
+- sql
+  - CREATE DATABASE paradigmas;
+
 ## Configuración en application.properties
 - spring.datasource.url=jdbc:mysql://localhost:3306/paradigmas?useSSL=false&serverTimezone=UTC
 - spring.datasource.username=root
@@ -69,31 +70,31 @@ CREATE DATABASE paradigmas;``
 - spring.jpa.hibernate.ddl-auto=update
 - spring.jpa.show-sql=true
 - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
-- Ajustar username y password según la instalación.
+  - Ajustar username y password según la instalación.
 
 ## Ejecutar aplicación
 mvn spring-boot:run
 
 ## Endpoints principales
 ### Errores
-GET /api/logs/reportes/errores
-GET /api/logs/reportes/errores/top3
-GET /api/logs/reportes/errores/horas-pico
+- GET /api/logs/reportes/errores
+- GET /api/logs/reportes/errores/top3
+- GET /api/logs/reportes/errores/horas-pico
 
 ### Tiempos de respuesta
-GET /api/logs/reportes/tiempos/estadisticas
-GET /api/logs/reportes/tiempos/distribucion
+- GET /api/logs/reportes/tiempos/estadisticas
+- GET /api/logs/reportes/tiempos/distribucion
 
 ### Uso de endpoints
-GET /api/logs/reportes/uso/endpoints
-GET /api/logs/reportes/uso/http
+- GET /api/logs/reportes/uso/endpoints
+- GET /api/logs/reportes/uso/http
 
 ### Alertas
-GET /api/logs/reportes/alertas/eventos
-GET /api/logs/reportes/alertas/cantidad
+- GET /api/logs/reportes/alertas/eventos
+- GET /api/logs/reportes/alertas/cantidad
 
 ### Estado
-GET /api/logs/reportes/estado
+- GET /api/logs/reportes/estado
 
 ## Pruebas con Postman
 El repositorio incluye una colección de Postman con todos los endpoints listos para probar.
