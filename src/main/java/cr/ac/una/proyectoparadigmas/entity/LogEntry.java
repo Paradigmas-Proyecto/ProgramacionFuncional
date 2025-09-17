@@ -7,9 +7,9 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 /**
- * Entidad que representa un registro de log en el sistema.
- * Será usada por el repositorio y servicios para analizar eventos,
- * errores y tiempos de respuesta.
+     * Entidad que representa un registro de log en el sistema.
+     * Será usada por el repositorio y servicios para analizar eventos,
+     * errores y tiempos de respuesta.
  */
 @Entity
 @Data
