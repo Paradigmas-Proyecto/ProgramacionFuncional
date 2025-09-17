@@ -25,6 +25,34 @@ public class PersonaController {
     ResponseEntity<Persona> savePersona(@RequestBody Persona Persona){
         return ResponseEntity.ok(personaRepository.save(Persona));
     }
+    // GET: persona por id
+    @GetMapping("/persona/{id}")
+    public ResponseEntity<Persona> findById(@PathVariable Long id) {
+        return personaRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
+    // PUT: actualizar persona
+    @PutMapping("/persona/{id}")
+    public ResponseEntity<Persona> updatePersona(@PathVariable Long id, @RequestBody Persona persona) {
+        if (!personaRepository.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        persona.setId(id); // asegurar que se actualice la existente
+        return ResponseEntity.ok(personaRepository.save(persona));
+    }
+
+    // DELETE: eliminar persona
+    @DeleteMapping("/persona/{id}")
+    public ResponseEntity<Void> deletePersona(@PathVariable Long id) {
+        if (!personaRepository.existsById(id)) {
+            return ResponseEntity.notFound().build(); // 404 si no existe
+        }
+        personaRepository.deleteById(id);
+        return ResponseEntity.noContent().build();    // 204 No Content
+    }
 
 
 }
