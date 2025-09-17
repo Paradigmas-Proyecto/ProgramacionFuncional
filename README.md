@@ -63,13 +63,13 @@ El sistema permite obtener métricas sobre errores, tiempos de respuesta, uso de
 ``sql
 CREATE DATABASE paradigmas;``
 ## Configuración en application.properties
-spring.datasource.url=jdbc:mysql://localhost:3306/paradigmas?useSSL=false&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=12345678
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
-``Ajustar username y password según la instalación.``
+- spring.datasource.url=jdbc:mysql://localhost:3306/paradigmas?useSSL=false&serverTimezone=UTC
+- spring.datasource.username=root
+- spring.datasource.password=12345678
+- spring.jpa.hibernate.ddl-auto=update
+- spring.jpa.show-sql=true
+- spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+- Ajustar username y password según la instalación.
 
 ## Ejecutar aplicación
 mvn spring-boot:run
