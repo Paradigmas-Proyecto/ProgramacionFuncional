@@ -7,11 +7,17 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
 
+
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 /**
  * Aspecto que intercepta métodos de PersonaController.
 
@@ -60,25 +66,44 @@ public class PersonaAspect {
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         long inicio = System.currentTimeMillis();
 
-        Object result = joinPoint.proceed(); // Ejecuta el método original
+        // obtener request/response para capturar endpoint, método y status reales
+        ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attrs != null ? attrs.getRequest() : null;
+        HttpServletResponse response = attrs != null ? attrs.getResponse() : null;
 
-        long fin = System.currentTimeMillis();
-        long tiempoRespuesta = fin - inicio;
+        int status = 200;
+        Object result = null; // <--- agregar esta línea
+        try {
+            result = joinPoint.proceed(); // Ejecuta el método original
+            status = (response != null && response.getStatus() > 0) ? response.getStatus() : 200;
+            return result;
+        } catch (Throwable t) {
+            status = 500; // Si hubo excepción, marca 500 (crítico)
+            throw t;
+        } finally {
+            long fin = System.currentTimeMillis();
+            long tiempoRespuesta = fin - inicio;
 
-        // Crear un LogEntry y guardarlo en la base de datos
-        LogEntry log = new LogEntry();
-        log.setTimestamp(LocalDateTime.now());
-        log.setNivel("INFO");
-        log.setMensaje("Ejecutado: " + joinPoint.getSignature().getName());
-        log.setEndpoint("/api/persona"); // Se puede mejorar para obtener dinámicamente
-        log.setMetodoHttp("HTTP"); // Aquí también se podría capturar dinámicamente
-        log.setStatusCode(200); // Valor fijo, se puede refinar con @AfterReturning / @AfterThrowing
-        log.setTiempoRespuesta(tiempoRespuesta);
+            // Crear un LogEntry y guardarlo en la base de datos (con datos reales)
+            LogEntry log = new LogEntry();
+            log.setTimestamp(LocalDateTime.now());
+            log.setNivel(status >= 500 ? "ERROR" : "INFO");
+            log.setMensaje("Ejecutado: " + joinPoint.getSignature().getName());
+            log.setEndpoint(request != null ? request.getRequestURI() : "/api/persona");
+            log.setMetodoHttp(request != null ? request.getMethod() : "HTTP");
+            int effectiveStatus =
+                    (status >= 500) ? status :
+                            (result instanceof ResponseEntity<?> re) ? re.getStatusCodeValue() :
+                                    (response != null && response.getStatus() > 0) ? response.getStatus() :
+                                            200;
 
-        logRepository.save(log);
 
-        logger.info("Tiempo de respuesta (" + joinPoint.getSignature().getName() + "): " + tiempoRespuesta + " ms");
+            log.setStatusCode(effectiveStatus);
+            log.setTiempoRespuesta(tiempoRespuesta);
 
-        return result;
+            logRepository.save(log);
+
+            logger.info("Tiempo de respuesta (" + joinPoint.getSignature().getName() + "): " + tiempoRespuesta + " ms");
+        }
     }
 }
