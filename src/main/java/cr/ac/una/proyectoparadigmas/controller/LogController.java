@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
-     * Controlador REST para exponer los reportes de logs.
-     * Aquí se definen los endpoints solicitados en el enunciado del proyecto.
-     * Cada endpoint consume el servicio LogService, que implementa la lógica funcional
-     * con streams y lambdas.
-
-     * Endpoints:
-     * - /api/logs/reportes/errores
-     * - /api/logs/reportes/tiempos
-     * - /api/logs/reportes/uso
-     * - /api/logs/reportes/alertas
-     * - /api/logs/reportes/estado
+ * Controlador REST para exponer los reportes de logs.
+ * Aquí se definen los endpoints solicitados en el enunciado del proyecto.
+ * Cada endpoint consume el servicio LogService, que implementa la lógica funcional
+ * con streams y lambdas.
+ *
+ * Endpoints:
+ * - /api/logs/reportes/errores
+ * - /api/logs/reportes/tiempos
+ * - /api/logs/reportes/uso
+ * - /api/logs/reportes/alertas
+ * - /api/logs/reportes/estado
  */
 
 @RestController
@@ -34,20 +34,20 @@ public class LogController {
 
     // ========= Reporte de Errores =========
     @GetMapping("/reportes/errores")
-    public ResponseEntity<Map<Integer, Long>> erroresPorTipo() {
-        // Ej: { "500": 12, "404": 5 }
+    public ResponseEntity<List<Map<String, Object>>> erroresPorTipo() {
+        // Ej: [ {"codigo":500,"cantidad":12}, {"codigo":404,"cantidad":5} ]
         return ResponseEntity.ok(logService.erroresPorCodigo());
     }
 
     @GetMapping("/reportes/errores/top3")
-    public ResponseEntity<List<Map.Entry<Integer, Long>>> top3Errores() {
-        // Ej: [ {"status":500,"conteo":12}, {"status":404,"conteo":5}, {"status":400,"conteo":3} ]
+    public ResponseEntity<List<Map<String, Object>>> top3Errores() {
+        // Ej: [ {"codigo":500,"cantidad":12}, {"codigo":404,"cantidad":5}, {"codigo":400,"cantidad":3} ]
         return ResponseEntity.ok(logService.top3Errores());
     }
 
     @GetMapping("/reportes/errores/horas-pico")
-    public ResponseEntity<Map<Integer, Long>> horasPicoErrores() {
-        // Ej: { "0": 1, "13": 7, "18": 12 }
+    public ResponseEntity<List<Map<String, Object>>> horasPicoErrores() {
+        // Ej: [ {"hora":18,"cantidad":12}, {"hora":13,"cantidad":7}, {"hora":0,"cantidad":1} ]
         return ResponseEntity.ok(logService.horasPicoErrores());
     }
 
@@ -59,21 +59,33 @@ public class LogController {
     }
 
     @GetMapping("/reportes/tiempos/distribucion")
-    public ResponseEntity<Map<String, Long>> distribucionTiempos() {
-        // Ej: { "/api/persona": { "min":10,"max":200,"promedio":80 }, ... }
+    public ResponseEntity<List<Map<String, Object>>> distribucionTiempos() {
+        // Ej: [ {"endpoint":"/api/persona","total":1234}, {"endpoint":"/api/logs","total":879} ]
         return ResponseEntity.ok(logService.distribucionTiemposPorEndpoint());
     }
 
     // ========= Reporte de Uso =========
     @GetMapping("/reportes/uso/endpoints")
-    public ResponseEntity<Map<String, Long>> usoEndpoints() {
-        // Ej: { "top":[...], "least":[...] }
+    public ResponseEntity<List<Map<String, Object>>> usoEndpoints() {
+        // Ej: [ {"endpoint":"/api/persona","cantidad":20}, {"endpoint":"/api/logs","cantidad":15} ]
         return ResponseEntity.ok(logService.usoPorEndpoint());
     }
 
+    @GetMapping("/reportes/uso/top3-mas")
+    public ResponseEntity<List<Map<String, Object>>> top3MasUsados() {
+        // Ej: [ {"endpoint":"/api/persona","cantidad":20}, ... ] (3 elementos)
+        return ResponseEntity.ok(logService.top3EndpointsMasUsados());
+    }
+
+    @GetMapping("/reportes/uso/top3-menos")
+    public ResponseEntity<List<Map<String, Object>>> top3MenosUsados() {
+        // Ej: [ {"endpoint":"/api/poco","cantidad":1}, ... ] (3 elementos)
+        return ResponseEntity.ok(logService.top3EndpointsMenosUsados());
+    }
+
     @GetMapping("/reportes/uso/http")
-    public ResponseEntity<Map<String, Long>> usoPorMetodoHttp() {
-        // Ej: { "GET":120, "POST":40, "PUT":6, "DELETE":2 }
+    public ResponseEntity<List<Map<String, Object>>> usoPorMetodoHttp() {
+        // Ej: [ {"metodo":"GET","cantidad":120}, {"metodo":"POST","cantidad":40}, {"metodo":"PUT","cantidad":6}, {"metodo":"DELETE","cantidad":2} ]
         return ResponseEntity.ok(logService.usoPorMetodoHttp());
     }
 
