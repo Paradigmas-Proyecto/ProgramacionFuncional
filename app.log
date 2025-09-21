@@ -744,3 +744,8 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2025-09-21T16:06:57.158-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoEndpoints): 216 ms
 2025-09-21T16:07:21.941-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 59 ms
 2025-09-21T16:19:39.152-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 45 ms
+2025-09-21T16:39:38.096-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-21T16:39:38.763-06:00  INFO 5220 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-21T16:39:38.777-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-21T16:39:38.788-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-21T16:39:38.810-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
