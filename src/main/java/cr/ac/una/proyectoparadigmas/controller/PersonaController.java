@@ -3,6 +3,7 @@ package cr.ac.una.proyectoparadigmas.controller;
 import cr.ac.una.proyectoparadigmas.entity.Persona;
 import cr.ac.una.proyectoparadigmas.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,5 +55,9 @@ public class PersonaController {
         return ResponseEntity.noContent().build();    // 204 No Content
     }
 
+    @GetMapping("/persona/boom")
+    public ResponseEntity<Void> boom() {
+        throw new RuntimeException("Error forzado para pruebas");
+    }
 
 }

@@ -8,6 +8,10 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
@@ -56,7 +60,21 @@ public class PersonaAspect {
      * - Calcula el tiempo real de ejecución.
      * - Guarda un LogEntry en la base de datos con toda la información.
      */
-    @Around("execution(* cr.ac.una.proyectoparadigmas.controller.PersonaController.*(..))")
+
+    //cris
+    private HttpServletRequest req() {
+        ServletRequestAttributes atts = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        return atts != null ? atts.getRequest() : null;
+    }
+
+    private HttpServletResponse res() {
+        ServletRequestAttributes atts = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        return atts != null ? atts.getResponse() : null;
+    }
+
+
+
+    /*@Around("execution(* cr.ac.una.proyectoparadigmas.controller.PersonaController.*(..))")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         long inicio = System.currentTimeMillis();
 
@@ -80,5 +98,63 @@ public class PersonaAspect {
         logger.info("Tiempo de respuesta (" + joinPoint.getSignature().getName() + "): " + tiempoRespuesta + " ms");
 
         return result;
+    }*/
+    //@Around("execution(* cr.ac.una.proyectoparadigmas.controller..*(..))")
+    @Around("execution(* cr.ac.una.proyectoparadigmas.controller..*(..)) && " +
+            "!@within(org.springframework.web.bind.annotation.RestControllerAdvice)")
+
+    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
+        long inicio = System.currentTimeMillis();
+
+        HttpServletRequest request = req();
+        HttpServletResponse response = res();
+
+        String endpoint = request != null ? request.getRequestURI() : "(desconocido)";
+        String metodo   = request != null ? request.getMethod()     : "(desconocido)";
+
+        try {
+            Object result = joinPoint.proceed(); // Ejecuta el método original
+
+            long tiempoRespuesta = System.currentTimeMillis() - inicio;
+            //int status = response != null ? response.getStatus() : 200;
+            // NUEVO: si el método devolvió ResponseEntity, usa ese status
+            int status;
+            if (result instanceof org.springframework.http.ResponseEntity<?> resp) {
+                status = resp.getStatusCodeValue();
+            } else {
+                status = (response != null ? response.getStatus() : 200);
+            }
+
+            LogEntry log = new LogEntry();
+            log.setTimestamp(LocalDateTime.now());
+            log.setNivel("INFO");
+            log.setMensaje("Ejecutado: " + joinPoint.getSignature().getName());
+            log.setEndpoint(endpoint);
+            log.setMetodoHttp(metodo);
+            log.setStatusCode(status);
+            log.setTiempoRespuesta(tiempoRespuesta);
+            logRepository.save(log);
+
+            logger.info("Tiempo de respuesta (" + joinPoint.getSignature().getName() + "): " + tiempoRespuesta + " ms");
+            return result;
+
+        } catch (Throwable ex) {
+            long tiempoRespuesta = System.currentTimeMillis() - inicio;
+            int status = (response != null && response.getStatus() >= 400) ? response.getStatus() : 500;
+
+            LogEntry log = new LogEntry();
+            log.setTimestamp(LocalDateTime.now());
+            log.setNivel("ERROR");
+            log.setMensaje(ex.getClass().getSimpleName() + ": " + (ex.getMessage() != null ? ex.getMessage() : "Error"));
+            log.setEndpoint(endpoint);
+            log.setMetodoHttp(metodo);
+            log.setStatusCode(status);
+            log.setTiempoRespuesta(tiempoRespuesta);
+            logRepository.save(log);
+
+            logger.warning("ERROR (" + metodo + " " + endpoint + ") status=" + status + " en " + tiempoRespuesta + " ms");
+            throw ex; // importante: re-lanzar para que Spring responda con el error real
+        }
     }
+
 }

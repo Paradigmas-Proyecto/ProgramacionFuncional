@@ -1,9 +1,13 @@
 package cr.ac.una.proyectoparadigmas.controller;
 
+import cr.ac.una.proyectoparadigmas.dto.EndpointStats;
 import cr.ac.una.proyectoparadigmas.entity.LogEntry;
 import cr.ac.una.proyectoparadigmas.service.LogService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import cr.ac.una.proyectoparadigmas.dto.ErrorCount;
+import cr.ac.una.proyectoparadigmas.dto.EndpointsUso;
 
 import java.util.List;
 import java.util.Map;
@@ -39,11 +43,17 @@ public class LogController {
         return ResponseEntity.ok(logService.erroresPorCodigo());
     }
 
-    @GetMapping("/reportes/errores/top3")
+    /*@GetMapping("/reportes/errores/top3")
     public ResponseEntity<List<Map.Entry<Integer, Long>>> top3Errores() {
         // Ej: [ {"status":500,"conteo":12}, {"status":404,"conteo":5}, {"status":400,"conteo":3} ]
         return ResponseEntity.ok(logService.top3Errores());
+    }*/
+    @GetMapping("/reportes/errores/top3")
+    public ResponseEntity<List<ErrorCount>> top3Errores() {
+        // Ej: [ {"code":500,"count":12}, {"code":404,"count":5}, {"code":400,"count":3} ]
+        return ResponseEntity.ok(logService.top3Errores());
     }
+
 
     @GetMapping("/reportes/errores/horas-pico")
     public ResponseEntity<Map<Integer, Long>> horasPicoErrores() {
@@ -58,9 +68,14 @@ public class LogController {
         return ResponseEntity.ok(logService.estadisticasTiempos());
     }
 
-    @GetMapping("/reportes/tiempos/distribucion")
+
+    /*@GetMapping("/reportes/tiempos/distribucion")
     public ResponseEntity<Map<String, Long>> distribucionTiempos() {
         // Ej: { "/api/persona": { "min":10,"max":200,"promedio":80 }, ... }
+        return ResponseEntity.ok(logService.distribucionTiemposPorEndpoint());
+    }*/
+    @GetMapping("/reportes/tiempos/distribucion")
+    public ResponseEntity<Map<String, EndpointStats>> distribucionTiempos() {
         return ResponseEntity.ok(logService.distribucionTiemposPorEndpoint());
     }
 
@@ -84,11 +99,15 @@ public class LogController {
         return ResponseEntity.ok(logService.eventosCriticos());
     }
 
-    @GetMapping("/reportes/alertas/cantidad")
+    /*@GetMapping("/reportes/alertas/cantidad")
     public ResponseEntity<Long> cantidadEventosCriticos() {
         return ResponseEntity.ok(logService.cantidadEventosCriticos());
+    }*/
+    @GetMapping(value = "/reportes/alertas/cantidad", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<String, Long>> cantidadEventosCriticos() {
+        long n = logService.cantidadEventosCriticos();  // <- sigue siendo funcional (stream + filter + count en el service)
+        return ResponseEntity.ok(Map.of("cantidad", n));
     }
-
     // ========= Reporte de Estado =========
     @GetMapping("/reportes/estado")
     public ResponseEntity<Map<String, Object>> estadoAplicacion() {
