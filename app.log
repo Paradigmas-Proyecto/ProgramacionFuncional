@@ -1,151 +1,20 @@
-2025-09-21T11:33:06.429-06:00  INFO 13384 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 13384 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T11:33:06.440-06:00  INFO 13384 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T11:33:07.235-06:00  INFO 13384 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T11:33:07.312-06:00  INFO 13384 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
-2025-09-21T11:33:08.123-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T11:33:08.145-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T11:33:08.146-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T11:33:08.217-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T11:33:08.218-06:00  INFO 13384 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1714 ms
-2025-09-21T11:33:08.467-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T11:33:08.558-06:00  INFO 13384 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T11:33:08.615-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T11:33:09.088-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T11:33:09.136-06:00  INFO 13384 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T11:33:10.377-06:00  WARN 13384 --- [proyecto-paradigmas] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
-2025-09-21T11:33:10.378-06:00 ERROR 13384 --- [proyecto-paradigmas] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'root'@'localhost' (using password: YES)
-2025-09-21T11:33:10.379-06:00  WARN 13384 --- [proyecto-paradigmas] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
-
-org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'root'@'localhost' (using password: YES)] [n/a]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
-	at cr.ac.una.proyectoparadigmas.ProyectoParadigmasApplication.main(ProyectoParadigmasApplication.java:10) ~[classes/:na]
-Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.4.0.jar:9.4.0]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839) ~[mysql-connector-j-9.4.0.jar:9.4.0]
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:415) ~[mysql-connector-j-9.4.0.jar:9.4.0]
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237) ~[mysql-connector-j-9.4.0.jar:9.4.0]
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.4.0.jar:9.4.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.2.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.2.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.2.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.2.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	... 35 common frames omitted
-
-2025-09-21T11:33:10.393-06:00 ERROR 13384 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-2025-09-21T11:33:10.394-06:00  WARN 13384 --- [proyecto-paradigmas] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-2025-09-21T11:33:10.398-06:00  INFO 13384 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-09-21T11:33:10.417-06:00  INFO 13384 --- [proyecto-paradigmas] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-09-21T11:33:10.459-06:00 ERROR 13384 --- [proyecto-paradigmas] [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.10.jar:6.2.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
-	at cr.ac.una.proyectoparadigmas.ProyectoParadigmasApplication.main(ProyectoParadigmasApplication.java:10) ~[classes/:na]
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
-	... 15 common frames omitted
-Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:186) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:410) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.26.Final.jar:6.6.26.Final]
-	... 30 common frames omitted
-
-2025-09-21T11:48:00.636-06:00  INFO 17584 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 17584 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T11:48:00.638-06:00  INFO 17584 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T11:48:01.453-06:00  INFO 17584 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T11:48:01.531-06:00  INFO 17584 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
-2025-09-21T11:48:02.274-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T11:48:02.293-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T11:48:02.294-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T11:48:02.359-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T11:48:02.359-06:00  INFO 17584 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1667 ms
-2025-09-21T11:48:02.587-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T11:48:02.684-06:00  INFO 17584 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T11:48:02.739-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T11:48:03.182-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T11:48:03.219-06:00  INFO 17584 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T11:48:03.729-06:00  INFO 17584 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24a3d414
-2025-09-21T11:48:03.732-06:00  INFO 17584 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T11:48:03.862-06:00  INFO 17584 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-22T00:01:12.387-06:00  INFO 20564 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 23-valhalla with PID 20564 (C:\Users\marhi\Documents\GitHub\ProgramacionFuncional\target\classes started by marhi in C:\Users\marhi\Documents\GitHub\ProgramacionFuncional)
+2025-09-22T00:01:12.392-06:00  INFO 20564 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-22T00:01:13.100-06:00  INFO 20564 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22T00:01:13.155-06:00  INFO 20564 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
+2025-09-22T00:01:13.741-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-22T00:01:13.754-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-22T00:01:13.755-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-22T00:01:13.816-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-22T00:01:13.816-06:00  INFO 20564 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1378 ms
+2025-09-22T00:01:14.000-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22T00:01:14.050-06:00  INFO 20564 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-22T00:01:14.083-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-22T00:01:14.343-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-22T00:01:14.367-06:00  INFO 20564 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-22T00:01:14.732-06:00  INFO 20564 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c135f63
+2025-09-22T00:01:14.736-06:00  INFO 20564 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-22T00:01:14.833-06:00  INFO 20564 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.4
@@ -153,74 +22,33 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-21T11:48:04.918-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T11:48:05.001-06:00  INFO 17584 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T11:48:05.426-06:00  WARN 17584 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T11:48:05.993-06:00  INFO 17584 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T11:48:06.011-06:00  INFO 17584 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 6.052 seconds (process running for 12.891)
-2025-09-21T11:53:46.093-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T11:53:46.093-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T11:53:46.096-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-09-21T11:53:46.806-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T11:53:46.933-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 508 ms
-2025-09-21T11:54:09.592-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Antes de ejecutar savePersona()
-2025-09-21T11:54:09.617-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T11:54:09.638-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (savePersona): 26 ms
-2025-09-21T11:54:21.184-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T11:54:21.207-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (updatePersona): 715 ms
-2025-09-21T11:54:30.528-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T11:54:30.553-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (deletePersona): 63 ms
-2025-09-21T11:54:46.327-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadoAplicacion): 54 ms
-2025-09-21T11:54:56.513-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoEndpoints): 54 ms
-2025-09-21T11:55:14.724-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoPorMetodoHttp): 37 ms
-2025-09-21T11:57:17.482-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadisticasTiempos): 44 ms
-2025-09-21T11:58:27.503-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 37 ms
-2025-09-21T11:58:56.062-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 32 ms
-2025-09-21T11:59:03.156-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 32 ms
-2025-09-21T11:59:09.208-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (horasPicoErrores): 52 ms
-2025-09-21T12:00:13.926-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 34 ms
-2025-09-21T12:01:30.432-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (cantidadEventosCriticos): 25 ms
-2025-09-21T12:02:00.316-06:00  WARN 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in string value]
-2025-09-21T12:02:16.658-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 30 ms
-2025-09-21T12:02:19.518-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 20 ms
-2025-09-21T12:02:23.907-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadoAplicacion): 25 ms
-2025-09-21T12:02:29.483-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoEndpoints): 24 ms
-2025-09-21T12:02:45.293-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoPorMetodoHttp): 26 ms
-2025-09-21T12:02:51.688-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadisticasTiempos): 20 ms
-2025-09-21T12:02:59.294-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 30 ms
-2025-09-21T12:03:05.772-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 25 ms
-2025-09-21T12:03:18.094-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (horasPicoErrores): 19 ms
-2025-09-21T12:03:27.214-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 19 ms
-2025-09-21T12:03:37.896-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:03:37.919-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (updatePersona): 18 ms
-2025-09-21T12:03:46.025-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:03:46.049-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (updatePersona): 21 ms
-2025-09-21T12:03:57.433-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:03:57.454-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (updatePersona): 33 ms
-2025-09-21T12:04:04.083-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 24 ms
-2025-09-21T12:05:21.760-06:00  INFO 17584 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadoAplicacion): 24 ms
-2025-09-21T12:27:32.105-06:00  INFO 17584 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T12:27:32.454-06:00  INFO 17584 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T12:27:32.462-06:00  INFO 17584 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T12:27:32.466-06:00  INFO 17584 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T12:27:32.475-06:00  INFO 17584 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T12:27:38.450-06:00  INFO 4348 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 4348 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T12:27:38.453-06:00  INFO 4348 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T12:27:39.198-06:00  INFO 4348 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T12:27:39.275-06:00  INFO 4348 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
-2025-09-21T12:27:39.923-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T12:27:39.948-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T12:27:39.949-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T12:27:40.018-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T12:27:40.019-06:00  INFO 4348 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1500 ms
-2025-09-21T12:27:40.223-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T12:27:40.289-06:00  INFO 4348 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T12:27:40.333-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T12:27:40.690-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T12:27:40.762-06:00  INFO 4348 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T12:27:41.240-06:00  INFO 4348 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@156324b
-2025-09-21T12:27:41.242-06:00  INFO 4348 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T12:27:41.368-06:00  INFO 4348 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-22T00:01:16.093-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-22T00:01:16.216-06:00  INFO 20564 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22T00:01:16.817-06:00  WARN 20564 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22T00:01:16.912-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-22T00:01:17.558-06:00  INFO 20564 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-22T00:01:17.567-06:00  INFO 20564 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 5.803 seconds (process running for 6.579)
+2025-09-22T00:01:20.361-06:00  INFO 20564 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22T00:01:20.361-06:00  INFO 20564 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-22T00:01:20.362-06:00  INFO 20564 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-22T00:01:20.720-06:00  INFO 20564 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (horasPicoErrores): 234 ms
+2025-09-22T00:04:27.787-06:00  INFO 32204 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 23-valhalla with PID 32204 (C:\Users\marhi\Documents\GitHub\ProgramacionFuncional\target\classes started by marhi in C:\Users\marhi\Documents\GitHub\ProgramacionFuncional)
+2025-09-22T00:04:27.791-06:00  INFO 32204 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-22T00:04:28.452-06:00  INFO 32204 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22T00:04:28.500-06:00  INFO 32204 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2025-09-22T00:04:29.136-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-22T00:04:29.152-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-22T00:04:29.153-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-22T00:04:29.215-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-22T00:04:29.215-06:00  INFO 32204 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1378 ms
+2025-09-22T00:04:29.411-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22T00:04:29.460-06:00  INFO 32204 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-22T00:04:29.500-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-22T00:04:29.734-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-22T00:04:29.761-06:00  INFO 32204 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-22T00:04:30.064-06:00  INFO 32204 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c41a177
+2025-09-22T00:04:30.067-06:00  INFO 32204 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-22T00:04:30.142-06:00  INFO 32204 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.4
@@ -228,49 +56,38 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-21T12:27:42.420-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T12:27:42.491-06:00  INFO 4348 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T12:27:42.921-06:00  WARN 4348 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T12:27:43.409-06:00  INFO 4348 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T12:27:43.419-06:00  INFO 4348 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 5.679 seconds (process running for 6.554)
-2025-09-21T12:28:18.774-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T12:28:18.776-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T12:28:18.778-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-21T12:28:19.467-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 423 ms
-2025-09-21T12:28:33.928-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:28:33.958-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 29 ms
-2025-09-21T12:28:40.664-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 50 ms
-2025-09-21T12:28:45.749-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 37 ms
-2025-09-21T12:28:51.875-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoEndpoints): 39 ms
-2025-09-21T12:28:57.806-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoPorMetodoHttp): 33 ms
-2025-09-21T12:29:03.439-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadisticasTiempos): 32 ms
-2025-09-21T12:29:08.669-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 70 ms
-2025-09-21T12:29:14.001-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 25 ms
-2025-09-21T12:29:54.322-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 35 ms
-2025-09-21T12:31:08.734-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 44 ms
-2025-09-21T12:31:40.787-06:00  INFO 4348 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadisticasTiempos): 34 ms
-2025-09-21T12:36:16.806-06:00  INFO 4348 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T12:36:17.621-06:00  INFO 4348 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T12:36:17.630-06:00  INFO 4348 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T12:36:17.635-06:00  INFO 4348 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T12:36:17.673-06:00  INFO 4348 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T12:36:22.906-06:00  INFO 14936 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 14936 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T12:36:22.909-06:00  INFO 14936 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T12:36:23.606-06:00  INFO 14936 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T12:36:23.667-06:00  INFO 14936 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
-2025-09-21T12:36:24.263-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T12:36:24.276-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T12:36:24.276-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T12:36:24.332-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T12:36:24.333-06:00  INFO 14936 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
-2025-09-21T12:36:24.515-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T12:36:24.557-06:00  INFO 14936 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T12:36:24.587-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T12:36:24.873-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T12:36:24.912-06:00  INFO 14936 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T12:36:25.215-06:00  INFO 14936 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b2b7e3c
-2025-09-21T12:36:25.219-06:00  INFO 14936 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T12:36:25.308-06:00  INFO 14936 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-22T00:04:30.899-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-22T00:04:30.963-06:00  INFO 32204 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22T00:04:31.392-06:00  WARN 32204 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22T00:04:31.446-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-22T00:04:32.103-06:00  INFO 32204 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-22T00:04:32.111-06:00  INFO 32204 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.911 seconds (process running for 5.571)
+2025-09-22T00:04:38.306-06:00  INFO 32204 --- [proyecto-paradigmas] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22T00:04:38.306-06:00  INFO 32204 --- [proyecto-paradigmas] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-22T00:04:38.307-06:00  INFO 32204 --- [proyecto-paradigmas] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-22T00:05:53.227-06:00  INFO 32204 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 194 ms
+2025-09-22T00:06:23.553-06:00  INFO 32204 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (horasPicoErrores): 19 ms
+2025-09-22T00:08:23.585-06:00  INFO 32204 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
+2025-09-22T00:08:23.598-06:00  INFO 32204 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 13 ms
+2025-09-22T04:46:49.399-06:00  WARN 32204 --- [proyecto-paradigmas] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h55m18s427ms699µs600ns).
+2025-09-22T09:50:23.650-06:00  WARN 32204 --- [proyecto-paradigmas] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h3m41s121ms903µs200ns).
+2025-09-22T10:17:44.095-06:00  INFO 26976 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 23-valhalla with PID 26976 (C:\Users\marhi\Documents\GitHub\ProgramacionFuncional\target\classes started by marhi in C:\Users\marhi\Documents\GitHub\ProgramacionFuncional)
+2025-09-22T10:17:44.097-06:00  INFO 26976 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-22T10:17:44.851-06:00  INFO 26976 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22T10:17:44.898-06:00  INFO 26976 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2025-09-22T10:17:45.608-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-22T10:17:45.622-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-22T10:17:45.622-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-22T10:17:45.679-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-22T10:17:45.679-06:00  INFO 26976 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1540 ms
+2025-09-22T10:17:45.870-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22T10:17:45.940-06:00  INFO 26976 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-22T10:17:45.980-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-22T10:17:46.267-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-22T10:17:46.299-06:00  INFO 26976 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-22T10:17:46.733-06:00  INFO 26976 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63c4d16
+2025-09-22T10:17:46.735-06:00  INFO 26976 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-22T10:17:46.878-06:00  INFO 26976 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.4
@@ -278,46 +95,32 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-21T12:36:26.200-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T12:36:26.266-06:00  INFO 14936 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T12:36:26.666-06:00  WARN 14936 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T12:36:27.165-06:00  INFO 14936 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T12:36:27.175-06:00  INFO 14936 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.915 seconds (process running for 5.636)
-2025-09-21T12:37:59.431-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T12:37:59.433-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T12:37:59.435-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-21T12:37:59.969-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:38:00.103-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 372 ms
-2025-09-21T12:38:07.108-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:38:07.131-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findById): 35 ms
-2025-09-21T12:38:24.774-06:00  WARN 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in string value]
-2025-09-21T12:38:37.140-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:38:37.166-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findById): 17 ms
-2025-09-21T12:38:42.286-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 100 ms
-2025-09-21T12:38:54.647-06:00  INFO 14936 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (horasPicoErrores): 56 ms
-2025-09-21T12:46:19.107-06:00  WARN 14936 --- [proyecto-paradigmas] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m23s669ms819µs500ns).
-2025-09-21T12:48:51.891-06:00  INFO 14936 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T12:48:52.224-06:00  INFO 14936 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T12:48:52.229-06:00  INFO 14936 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T12:48:52.231-06:00  INFO 14936 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T12:48:52.239-06:00  INFO 14936 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T12:53:13.523-06:00  INFO 27008 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 27008 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T12:53:13.525-06:00  INFO 27008 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T12:53:14.353-06:00  INFO 27008 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T12:53:14.425-06:00  INFO 27008 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 2 JPA repository interfaces.
-2025-09-21T12:53:15.056-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T12:53:15.069-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T12:53:15.070-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T12:53:15.124-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T12:53:15.124-06:00  INFO 27008 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1548 ms
-2025-09-21T12:53:15.315-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T12:53:15.357-06:00  INFO 27008 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T12:53:15.393-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T12:53:15.681-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T12:53:15.709-06:00  INFO 27008 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T12:53:16.040-06:00  INFO 27008 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fa879ed
-2025-09-21T12:53:16.043-06:00  INFO 27008 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T12:53:16.133-06:00  INFO 27008 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-22T10:17:47.650-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-22T10:17:47.754-06:00  INFO 26976 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22T10:17:48.138-06:00  WARN 26976 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22T10:17:48.188-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-22T10:17:48.663-06:00  INFO 26976 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-22T10:17:48.669-06:00  INFO 26976 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 5.252 seconds (process running for 6.136)
+2025-09-22T10:17:52.427-06:00  INFO 26976 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22T10:17:52.427-06:00  INFO 26976 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-22T10:17:52.427-06:00  INFO 26976 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-09-22T10:18:22.133-06:00  INFO 28964 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 23-valhalla with PID 28964 (C:\Users\marhi\Documents\GitHub\ProgramacionFuncional\target\classes started by marhi in C:\Users\marhi\Documents\GitHub\ProgramacionFuncional)
+2025-09-22T10:18:22.135-06:00  INFO 28964 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-22T10:18:22.717-06:00  INFO 28964 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22T10:18:22.760-06:00  INFO 28964 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2025-09-22T10:18:23.279-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-22T10:18:23.292-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-22T10:18:23.292-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-22T10:18:23.352-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-22T10:18:23.352-06:00  INFO 28964 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1177 ms
+2025-09-22T10:18:23.509-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22T10:18:23.565-06:00  INFO 28964 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-22T10:18:23.597-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-22T10:18:23.833-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-22T10:18:23.858-06:00  INFO 28964 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-22T10:18:24.121-06:00  INFO 28964 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6906be0f
+2025-09-22T10:18:24.123-06:00  INFO 28964 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-22T10:18:24.200-06:00  INFO 28964 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.4
@@ -325,41 +128,32 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-21T12:53:17.039-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T12:53:17.115-06:00  INFO 27008 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T12:53:17.501-06:00  WARN 27008 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T12:53:17.972-06:00  INFO 27008 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T12:53:17.981-06:00  INFO 27008 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 5.081 seconds (process running for 5.785)
-2025-09-21T12:53:50.810-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T12:53:50.812-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T12:53:50.814-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-21T12:53:51.169-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:53:51.292-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findById): 185 ms
-2025-09-21T12:53:57.259-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T12:53:57.281-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 219 ms
-2025-09-21T12:54:22.280-06:00  INFO 27008 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoEndpoints): 79 ms
-2025-09-21T12:59:27.683-06:00  INFO 27008 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T12:59:28.159-06:00  INFO 27008 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T12:59:28.165-06:00  INFO 27008 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T12:59:28.169-06:00  INFO 27008 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T12:59:28.183-06:00  INFO 27008 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T13:04:20.325-06:00  INFO 7916 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 7916 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T13:04:20.327-06:00  INFO 7916 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T13:04:21.026-06:00  INFO 7916 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T13:04:21.086-06:00  INFO 7916 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
-2025-09-21T13:04:21.704-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T13:04:21.719-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T13:04:21.719-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T13:04:21.778-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T13:04:21.778-06:00  INFO 7916 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1393 ms
-2025-09-21T13:04:21.971-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T13:04:22.014-06:00  INFO 7916 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T13:04:22.045-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T13:04:22.339-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T13:04:22.372-06:00  INFO 7916 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T13:04:22.681-06:00  INFO 7916 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ac756b
-2025-09-21T13:04:22.683-06:00  INFO 7916 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T13:04:22.773-06:00  INFO 7916 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-22T10:18:24.880-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-22T10:18:24.953-06:00  INFO 28964 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22T10:18:25.327-06:00  WARN 28964 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22T10:18:25.381-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-22T10:18:25.918-06:00  INFO 28964 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-22T10:18:25.925-06:00  INFO 28964 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.284 seconds (process running for 4.82)
+2025-09-22T10:18:30.541-06:00  INFO 28964 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22T10:18:30.541-06:00  INFO 28964 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-22T10:18:30.542-06:00  INFO 28964 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-22T10:18:47.078-06:00  INFO 18776 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 23-valhalla with PID 18776 (C:\Users\marhi\Documents\GitHub\ProgramacionFuncional\target\classes started by marhi in C:\Users\marhi\Documents\GitHub\ProgramacionFuncional)
+2025-09-22T10:18:47.081-06:00  INFO 18776 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-22T10:18:47.653-06:00  INFO 18776 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22T10:18:47.697-06:00  INFO 18776 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2025-09-22T10:18:48.207-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-22T10:18:48.219-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-22T10:18:48.219-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-22T10:18:48.277-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-22T10:18:48.278-06:00  INFO 18776 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1160 ms
+2025-09-22T10:18:48.446-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22T10:18:48.490-06:00  INFO 18776 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-22T10:18:48.516-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-22T10:18:48.735-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-22T10:18:48.759-06:00  INFO 18776 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-22T10:18:49.026-06:00  INFO 18776 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62ab5e63
+2025-09-22T10:18:49.028-06:00  INFO 18776 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-22T10:18:49.096-06:00  INFO 18776 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.4
@@ -367,37 +161,32 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-21T13:04:23.641-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T13:04:23.700-06:00  INFO 7916 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T13:04:24.109-06:00  WARN 7916 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T13:04:24.577-06:00  INFO 7916 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T13:04:24.585-06:00  INFO 7916 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.87 seconds (process running for 5.532)
-2025-09-21T13:04:47.560-06:00  INFO 7916 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T13:04:47.562-06:00  INFO 7916 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T13:04:47.565-06:00  INFO 7916 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-09-21T13:04:48.260-06:00  INFO 7916 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadisticasTiempos): 432 ms
-2025-09-21T13:08:40.724-06:00  INFO 7916 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T13:08:41.340-06:00  INFO 7916 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T13:08:41.344-06:00  INFO 7916 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T13:08:41.346-06:00  INFO 7916 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T13:08:41.358-06:00  INFO 7916 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T13:12:17.127-06:00  INFO 16044 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 16044 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T13:12:17.130-06:00  INFO 16044 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T13:12:17.825-06:00  INFO 16044 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T13:12:17.897-06:00  INFO 16044 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
-2025-09-21T13:12:18.568-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T13:12:18.583-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T13:12:18.584-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T13:12:18.648-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T13:12:18.648-06:00  INFO 16044 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1461 ms
-2025-09-21T13:12:18.862-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T13:12:18.909-06:00  INFO 16044 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T13:12:18.944-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T13:12:19.254-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T13:12:19.288-06:00  INFO 16044 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T13:12:19.621-06:00  INFO 16044 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ac756b
-2025-09-21T13:12:19.623-06:00  INFO 16044 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T13:12:19.720-06:00  INFO 16044 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-22T10:18:49.777-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-22T10:18:49.829-06:00  INFO 18776 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22T10:18:50.211-06:00  WARN 18776 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22T10:18:50.261-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-22T10:18:50.711-06:00  INFO 18776 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-22T10:18:50.717-06:00  INFO 18776 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.148 seconds (process running for 4.756)
+2025-09-22T10:18:55.322-06:00  INFO 18776 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22T10:18:55.323-06:00  INFO 18776 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-22T10:18:55.324-06:00  INFO 18776 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-22T10:22:02.438-06:00  INFO 34428 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 23-valhalla with PID 34428 (C:\Users\marhi\Documents\GitHub\ProgramacionFuncional\target\classes started by marhi in C:\Users\marhi\Documents\GitHub\ProgramacionFuncional)
+2025-09-22T10:22:02.440-06:00  INFO 34428 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-22T10:22:03.210-06:00  INFO 34428 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22T10:22:03.260-06:00  INFO 34428 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2025-09-22T10:22:03.912-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-22T10:22:03.927-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-22T10:22:03.927-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-22T10:22:03.990-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-22T10:22:03.990-06:00  INFO 34428 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1494 ms
+2025-09-22T10:22:04.168-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22T10:22:04.213-06:00  INFO 34428 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-22T10:22:04.242-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-22T10:22:04.504-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-22T10:22:04.533-06:00  INFO 34428 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-22T10:22:04.841-06:00  INFO 34428 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2299f6d7
+2025-09-22T10:22:04.843-06:00  INFO 34428 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-22T10:22:04.925-06:00  INFO 34428 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.4
@@ -405,40 +194,44 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-21T13:12:20.616-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T13:12:20.678-06:00  INFO 16044 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T13:12:21.077-06:00  WARN 16044 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T13:12:21.559-06:00  INFO 16044 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T13:12:21.569-06:00  INFO 16044 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 5.043 seconds (process running for 5.683)
-2025-09-21T13:12:34.122-06:00  INFO 16044 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T13:12:34.123-06:00  INFO 16044 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T13:12:34.125-06:00  INFO 16044 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-09-21T13:12:34.722-06:00  INFO 16044 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 353 ms
-2025-09-21T13:21:47.438-06:00  INFO 16044 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 51 ms
-2025-09-21T13:21:56.118-06:00  INFO 16044 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 33 ms
-2025-09-21T13:22:03.062-06:00  INFO 16044 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 30 ms
-2025-09-21T13:28:36.419-06:00  INFO 16044 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T13:28:37.124-06:00  INFO 16044 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T13:28:37.131-06:00  INFO 16044 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T13:28:37.136-06:00  INFO 16044 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T13:28:37.153-06:00  INFO 16044 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T13:29:47.437-06:00  INFO 21856 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 21856 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T13:29:47.441-06:00  INFO 21856 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T13:29:48.229-06:00  INFO 21856 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T13:29:48.302-06:00  INFO 21856 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
-2025-09-21T13:29:49.083-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T13:29:49.101-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T13:29:49.102-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T13:29:49.200-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T13:29:49.200-06:00  INFO 21856 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1705 ms
-2025-09-21T13:29:49.470-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T13:29:49.524-06:00  INFO 21856 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T13:29:49.560-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T13:29:49.869-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T13:29:49.914-06:00  INFO 21856 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T13:29:50.242-06:00  INFO 21856 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d88ce0e
-2025-09-21T13:29:50.244-06:00  INFO 21856 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T13:29:50.332-06:00  INFO 21856 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-22T10:22:05.720-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-22T10:22:05.770-06:00  INFO 34428 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22T10:22:06.226-06:00  WARN 34428 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22T10:22:06.787-06:00  INFO 34428 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-22T10:22:06.795-06:00  INFO 34428 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.94 seconds (process running for 5.614)
+2025-09-22T10:22:23.309-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22T10:22:23.310-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-22T10:22:23.311-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-22T10:22:23.812-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 240 ms
+2025-09-22T10:23:29.084-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 166 ms
+2025-09-22T10:23:32.468-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (horasPicoErrores): 22 ms
+2025-09-22T10:23:36.047-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 21 ms
+2025-09-22T10:23:39.265-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadisticasTiempos): 19 ms
+2025-09-22T10:23:42.396-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 15 ms
+2025-09-22T10:23:45.342-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoEndpoints): 14 ms
+2025-09-22T10:23:48.420-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoPorMetodoHttp): 24 ms
+2025-09-22T10:23:51.769-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 13 ms
+2025-09-22T10:23:54.652-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (cantidadEventosCriticos): 18 ms
+2025-09-22T10:23:58.124-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadoAplicacion): 12 ms
+2025-09-22T10:24:14.154-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
+2025-09-22T10:24:14.178-06:00  INFO 34428 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 13 ms
+2025-09-22T10:26:58.843-06:00  INFO 13372 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 23-valhalla with PID 13372 (C:\Users\marhi\Documents\GitHub\ProgramacionFuncional\target\classes started by marhi in C:\Users\marhi\Documents\GitHub\ProgramacionFuncional)
+2025-09-22T10:26:58.846-06:00  INFO 13372 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-22T10:26:59.610-06:00  INFO 13372 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-22T10:26:59.678-06:00  INFO 13372 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2025-09-22T10:27:00.324-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-22T10:27:00.338-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-22T10:27:00.338-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-09-22T10:27:00.386-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-22T10:27:00.387-06:00  INFO 13372 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1489 ms
+2025-09-22T10:27:00.550-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-22T10:27:00.602-06:00  INFO 13372 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-22T10:27:00.632-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-22T10:27:00.872-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-22T10:27:00.899-06:00  INFO 13372 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-22T10:27:01.184-06:00  INFO 13372 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a9df5
+2025-09-22T10:27:01.186-06:00  INFO 13372 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-22T10:27:01.269-06:00  INFO 13372 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 9.4
@@ -446,306 +239,14 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-21T13:29:51.230-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T13:29:51.296-06:00  INFO 21856 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T13:29:51.680-06:00  WARN 21856 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T13:29:52.299-06:00  INFO 21856 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T13:29:52.306-06:00  INFO 21856 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 5.541 seconds (process running for 6.357)
-2025-09-21T13:30:47.094-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T13:30:47.095-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T13:30:47.097-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-09-21T13:30:47.633-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T13:30:47.731-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 378 ms
-2025-09-21T13:31:40.589-06:00  WARN 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries]
-2025-09-21T13:31:52.815-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Antes de ejecutar savePersona()
-2025-09-21T13:31:52.836-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T13:31:52.854-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (savePersona): 22 ms
-2025-09-21T13:32:20.602-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Antes de ejecutar savePersona()
-2025-09-21T13:32:20.623-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T13:32:20.640-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (savePersona): 21 ms
-2025-09-21T13:33:26.721-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 63 ms
-2025-09-21T13:33:35.719-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 38 ms
-2025-09-21T13:34:02.856-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadoAplicacion): 37 ms
-2025-09-21T13:34:13.915-06:00  INFO 21856 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoPorMetodoHttp): 34 ms
-2025-09-21T13:39:01.551-06:00  WARN 21856 --- [proyecto-paradigmas] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m41s56ms824µs400ns).
-2025-09-21T13:43:14.112-06:00  INFO 21856 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T13:43:14.844-06:00  INFO 21856 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T13:43:14.849-06:00  INFO 21856 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T13:43:14.855-06:00  INFO 21856 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T13:43:14.869-06:00  INFO 21856 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T13:43:20.475-06:00  INFO 26532 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 26532 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T13:43:20.478-06:00  INFO 26532 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T13:43:21.185-06:00  INFO 26532 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T13:43:21.244-06:00  INFO 26532 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
-2025-09-21T13:43:21.862-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T13:43:21.876-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T13:43:21.877-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T13:43:21.926-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T13:43:21.927-06:00  INFO 26532 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1384 ms
-2025-09-21T13:43:22.107-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T13:43:22.153-06:00  INFO 26532 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T13:43:22.184-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T13:43:22.466-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T13:43:22.494-06:00  INFO 26532 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T13:43:22.836-06:00  INFO 26532 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3722f39d
-2025-09-21T13:43:22.839-06:00  INFO 26532 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T13:43:22.935-06:00  INFO 26532 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 9.4
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-21T13:43:23.811-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T13:43:23.877-06:00  INFO 26532 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T13:43:24.283-06:00  WARN 26532 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T13:43:24.763-06:00  INFO 26532 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T13:43:24.772-06:00  INFO 26532 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.937 seconds (process running for 5.711)
-2025-09-21T13:43:57.358-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T13:43:57.359-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T13:43:57.361-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-09-21T13:43:57.851-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T13:43:57.964-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 365 ms
-2025-09-21T13:44:09.695-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (handleBadRequest): 26 ms
-2025-09-21T13:44:40.306-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 52 ms
-2025-09-21T13:44:56.339-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 46 ms
-2025-09-21T13:45:38.934-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (horasPicoErrores): 34 ms
-2025-09-21T13:45:45.871-06:00  INFO 26532 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 34 ms
-2025-09-21T14:05:44.147-06:00  WARN 26532 --- [proyecto-paradigmas] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m21s58ms693µs499ns).
-2025-09-21T14:08:24.582-06:00  INFO 26532 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T14:08:24.938-06:00  INFO 26532 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T14:08:24.942-06:00  INFO 26532 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T14:08:24.944-06:00  INFO 26532 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T14:08:24.956-06:00  INFO 26532 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T14:08:29.887-06:00  INFO 9196 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 9196 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T14:08:29.889-06:00  INFO 9196 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T14:08:30.588-06:00  INFO 9196 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T14:08:30.653-06:00  INFO 9196 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
-2025-09-21T14:08:31.254-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T14:08:31.268-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T14:08:31.268-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T14:08:31.332-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T14:08:31.333-06:00  INFO 9196 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1388 ms
-2025-09-21T14:08:31.535-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T14:08:31.581-06:00  INFO 9196 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T14:08:31.617-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T14:08:31.917-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T14:08:31.947-06:00  INFO 9196 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T14:08:32.255-06:00  INFO 9196 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@105dc04d
-2025-09-21T14:08:32.257-06:00  INFO 9196 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T14:08:32.347-06:00  INFO 9196 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 9.4
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-21T14:08:33.228-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T14:08:33.294-06:00  INFO 9196 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T14:08:33.681-06:00  WARN 9196 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T14:08:34.254-06:00  INFO 9196 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T14:08:34.264-06:00  INFO 9196 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 5.032 seconds (process running for 5.881)
-2025-09-21T14:11:17.265-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T14:11:17.266-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T14:11:17.268-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-09-21T14:11:17.910-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T14:11:18.023-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 456 ms
-2025-09-21T14:12:21.955-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T14:12:21.985-06:00  WARN 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : ERROR (GET /api/persona/boom) status=500 en 1 ms
-2025-09-21T14:12:22.036-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (handleInternal): 22 ms
-2025-09-21T14:12:48.274-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 87 ms
-2025-09-21T14:13:11.804-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (cantidadEventosCriticos): 56 ms
-2025-09-21T14:13:17.033-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (cantidadEventosCriticos): 32 ms
-2025-09-21T14:13:32.889-06:00  INFO 9196 --- [proyecto-paradigmas] [http-nio-8080-exec-10] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 52 ms
-2025-09-21T14:21:20.908-06:00  INFO 9196 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T14:21:21.210-06:00  INFO 9196 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T14:21:21.216-06:00  INFO 9196 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T14:21:21.219-06:00  INFO 9196 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T14:21:21.233-06:00  INFO 9196 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T14:21:26.361-06:00  INFO 17396 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 17396 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T14:21:26.365-06:00  INFO 17396 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T14:21:27.086-06:00  INFO 17396 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T14:21:27.132-06:00  INFO 17396 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
-2025-09-21T14:21:27.725-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T14:21:27.738-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T14:21:27.738-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T14:21:27.791-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T14:21:27.792-06:00  INFO 17396 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1365 ms
-2025-09-21T14:21:27.947-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T14:21:27.987-06:00  INFO 17396 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T14:21:28.023-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T14:21:28.294-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T14:21:28.325-06:00  INFO 17396 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T14:21:28.587-06:00  INFO 17396 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6501b105
-2025-09-21T14:21:28.588-06:00  INFO 17396 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T14:21:28.664-06:00  INFO 17396 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 9.4
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-21T14:21:29.427-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T14:21:29.479-06:00  INFO 17396 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T14:21:29.847-06:00  WARN 17396 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T14:21:30.231-06:00  INFO 17396 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T14:21:30.245-06:00  INFO 17396 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.651 seconds (process running for 5.593)
-2025-09-21T14:21:57.020-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T14:21:57.021-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T14:21:57.022-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-21T14:21:57.476-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 301 ms
-2025-09-21T14:22:00.211-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 36 ms
-2025-09-21T14:22:09.650-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T14:22:09.667-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 16 ms
-2025-09-21T14:22:15.751-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T14:22:15.776-06:00  WARN 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : ERROR (GET /api/persona/boom) status=500 en 0 ms
-2025-09-21T14:22:15.798-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-4] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (handleInternal): 0 ms
-2025-09-21T14:22:23.479-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 22 ms
-2025-09-21T14:22:57.733-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 51 ms
-2025-09-21T14:23:04.551-06:00  INFO 17396 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 36 ms
-2025-09-21T14:44:57.581-06:00  INFO 17396 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T14:44:58.162-06:00  INFO 17396 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T14:44:58.168-06:00  INFO 17396 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T14:44:58.170-06:00  INFO 17396 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T14:44:58.181-06:00  INFO 17396 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T14:45:02.721-06:00  INFO 16800 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 16800 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T14:45:02.723-06:00  INFO 16800 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T14:45:03.290-06:00  INFO 16800 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T14:45:03.338-06:00  INFO 16800 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
-2025-09-21T14:45:03.840-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T14:45:03.850-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T14:45:03.851-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T14:45:03.887-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T14:45:03.888-06:00  INFO 16800 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1122 ms
-2025-09-21T14:45:04.031-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T14:45:04.077-06:00  INFO 16800 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T14:45:04.114-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T14:45:04.334-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T14:45:04.357-06:00  INFO 16800 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T14:45:04.591-06:00  INFO 16800 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@588d630d
-2025-09-21T14:45:04.593-06:00  INFO 16800 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T14:45:04.661-06:00  INFO 16800 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 9.4
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-21T14:45:05.313-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T14:45:05.362-06:00  INFO 16800 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T14:45:05.675-06:00  WARN 16800 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T14:45:06.140-06:00  INFO 16800 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T14:45:06.148-06:00  INFO 16800 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 3.908 seconds (process running for 4.59)
-2025-09-21T14:45:32.360-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T14:45:32.360-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T14:45:32.361-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-21T14:45:32.588-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T14:45:32.640-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 160 ms
-2025-09-21T14:45:39.774-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T14:45:39.805-06:00  WARN 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : ERROR (GET /api/persona/boom) status=500 en 1 ms
-2025-09-21T14:45:56.583-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-6] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 39 ms
-2025-09-21T14:46:13.279-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-8] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 28 ms
-2025-09-21T14:46:24.614-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (cantidadEventosCriticos): 40 ms
-2025-09-21T14:47:01.965-06:00  INFO 16800 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 26 ms
-2025-09-21T15:20:55.906-06:00  WARN 16800 --- [proyecto-paradigmas] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m50s917ms521µs800ns).
-2025-09-21T15:22:01.928-06:00  INFO 16800 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T15:22:02.163-06:00  INFO 16800 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T15:22:02.166-06:00  INFO 16800 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T15:22:02.168-06:00  INFO 16800 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T15:22:02.186-06:00  INFO 16800 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T15:24:13.478-06:00  INFO 24752 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 24752 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T15:24:13.481-06:00  INFO 24752 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T15:24:14.059-06:00  INFO 24752 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T15:24:14.107-06:00  INFO 24752 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
-2025-09-21T15:24:14.672-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T15:24:14.683-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T15:24:14.684-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T15:24:14.726-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T15:24:14.727-06:00  INFO 24752 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1204 ms
-2025-09-21T15:24:14.904-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T15:24:14.945-06:00  INFO 24752 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T15:24:14.972-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T15:24:15.195-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T15:24:15.218-06:00  INFO 24752 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T15:24:15.510-06:00  INFO 24752 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1224e1b6
-2025-09-21T15:24:15.512-06:00  INFO 24752 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T15:24:15.583-06:00  INFO 24752 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 9.4
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-21T15:24:16.263-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T15:24:16.318-06:00  INFO 24752 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T15:24:16.638-06:00  WARN 24752 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T15:24:17.055-06:00  INFO 24752 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T15:24:17.062-06:00  INFO 24752 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 3.996 seconds (process running for 5.817)
-2025-09-21T15:24:28.716-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T15:24:28.717-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T15:24:28.718-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-21T15:24:29.066-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (cantidadEventosCriticos): 206 ms
-2025-09-21T15:24:40.668-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (eventosCriticos): 35 ms
-2025-09-21T15:28:43.829-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 58 ms
-2025-09-21T15:46:07.831-06:00  WARN 24752 --- [proyecto-paradigmas] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m51s975ms116µs500ns).
-2025-09-21T16:02:23.322-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadoAplicacion): 38 ms
-2025-09-21T16:02:41.022-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T16:02:41.061-06:00  WARN 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : ERROR (GET /api/persona/boom) status=500 en 1 ms
-2025-09-21T16:02:52.205-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T16:02:52.224-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (findAll): 34 ms
-2025-09-21T16:03:13.941-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoPorMetodoHttp): 45 ms
-2025-09-21T16:03:32.709-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Después de ejecutar método en PersonaController
-2025-09-21T16:03:32.729-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-5] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (updatePersona): 766 ms
-2025-09-21T16:05:20.713-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadoAplicacion): 49 ms
-2025-09-21T16:05:44.619-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (estadisticasTiempos): 26 ms
-2025-09-21T16:05:50.252-06:00  INFO 24752 --- [proyecto-paradigmas] [http-nio-8080-exec-3] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoPorMetodoHttp): 36 ms
-2025-09-21T16:06:32.768-06:00  INFO 24752 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T16:06:33.094-06:00  INFO 24752 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T16:06:33.098-06:00  INFO 24752 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T16:06:33.101-06:00  INFO 24752 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T16:06:33.114-06:00  INFO 24752 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-21T16:06:38.236-06:00  INFO 5220 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Starting ProyectoParadigmasApplication using Java 17.0.16 with PID 5220 (C:\Users\khrizk\Desktop\ProgramacionFuncional\target\classes started by khrizk in C:\Users\khrizk\Desktop\ProgramacionFuncional)
-2025-09-21T16:06:38.239-06:00  INFO 5220 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-21T16:06:38.867-06:00  INFO 5220 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-21T16:06:38.925-06:00  INFO 5220 --- [proyecto-paradigmas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 2 JPA repository interfaces.
-2025-09-21T16:06:39.582-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-21T16:06:39.597-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-21T16:06:39.598-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-09-21T16:06:39.651-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-21T16:06:39.652-06:00  INFO 5220 --- [proyecto-paradigmas] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
-2025-09-21T16:06:39.832-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-21T16:06:39.902-06:00  INFO 5220 --- [proyecto-paradigmas] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-21T16:06:39.940-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-21T16:06:40.278-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-21T16:06:40.312-06:00  INFO 5220 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-21T16:06:40.728-06:00  INFO 5220 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78bad03b
-2025-09-21T16:06:40.730-06:00  INFO 5220 --- [proyecto-paradigmas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-21T16:06:40.854-06:00  INFO 5220 --- [proyecto-paradigmas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 9.4
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-09-21T16:06:41.776-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-21T16:06:41.840-06:00  INFO 5220 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T16:06:42.188-06:00  WARN 5220 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-21T16:06:42.662-06:00  INFO 5220 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-09-21T16:06:42.671-06:00  INFO 5220 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.99 seconds (process running for 5.752)
-2025-09-21T16:06:56.805-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-21T16:06:56.805-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-21T16:06:56.806-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-21T16:06:57.158-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (usoEndpoints): 216 ms
-2025-09-21T16:07:21.941-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-2] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 59 ms
-2025-09-21T16:19:39.152-06:00  INFO 5220 --- [proyecto-paradigmas] [http-nio-8080-exec-7] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (distribucionTiempos): 45 ms
-2025-09-21T16:39:38.096-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-09-21T16:39:38.763-06:00  INFO 5220 --- [proyecto-paradigmas] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-09-21T16:39:38.777-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-21T16:39:38.788-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-21T16:39:38.810-06:00  INFO 5220 --- [proyecto-paradigmas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-22T10:27:02.048-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-22T10:27:02.123-06:00  INFO 13372 --- [proyecto-paradigmas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-22T10:27:02.573-06:00  WARN 13372 --- [proyecto-paradigmas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-22T10:27:03.185-06:00  INFO 13372 --- [proyecto-paradigmas] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-22T10:27:03.192-06:00  INFO 13372 --- [proyecto-paradigmas] [main] c.a.u.p.ProyectoParadigmasApplication    : Started ProyectoParadigmasApplication in 4.958 seconds (process running for 5.616)
+2025-09-22T10:27:21.283-06:00  INFO 13372 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-22T10:27:21.283-06:00  INFO 13372 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-22T10:27:21.284-06:00  INFO 13372 --- [proyecto-paradigmas] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-22T10:27:21.763-06:00  INFO 13372 --- [proyecto-paradigmas] [http-nio-8080-exec-6] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 220 ms
+2025-09-22T10:27:29.868-06:00  INFO 13372 --- [proyecto-paradigmas] [http-nio-8080-exec-9] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (erroresPorTipo): 205 ms
+2025-09-22T10:28:39.346-06:00  INFO 13372 --- [proyecto-paradigmas] [http-nio-8080-exec-1] c.a.u.p.aspect.PersonaAspect             : Tiempo de respuesta (top3Errores): 35 ms

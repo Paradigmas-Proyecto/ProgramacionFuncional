@@ -43,11 +43,6 @@ public class LogController {
         return ResponseEntity.ok(logService.erroresPorCodigo());
     }
 
-    /*@GetMapping("/reportes/errores/top3")
-    public ResponseEntity<List<Map.Entry<Integer, Long>>> top3Errores() {
-        // Ej: [ {"status":500,"conteo":12}, {"status":404,"conteo":5}, {"status":400,"conteo":3} ]
-        return ResponseEntity.ok(logService.top3Errores());
-    }*/
     @GetMapping("/reportes/errores/top3")
     public ResponseEntity<List<ErrorCount>> top3Errores() {
         // Ej: [ {"code":500,"count":12}, {"code":404,"count":5}, {"code":400,"count":3} ]
@@ -69,11 +64,6 @@ public class LogController {
     }
 
 
-    /*@GetMapping("/reportes/tiempos/distribucion")
-    public ResponseEntity<Map<String, Long>> distribucionTiempos() {
-        // Ej: { "/api/persona": { "min":10,"max":200,"promedio":80 }, ... }
-        return ResponseEntity.ok(logService.distribucionTiemposPorEndpoint());
-    }*/
     @GetMapping("/reportes/tiempos/distribucion")
     public ResponseEntity<Map<String, EndpointStats>> distribucionTiempos() {
         return ResponseEntity.ok(logService.distribucionTiemposPorEndpoint());
@@ -99,10 +89,6 @@ public class LogController {
         return ResponseEntity.ok(logService.eventosCriticos());
     }
 
-    /*@GetMapping("/reportes/alertas/cantidad")
-    public ResponseEntity<Long> cantidadEventosCriticos() {
-        return ResponseEntity.ok(logService.cantidadEventosCriticos());
-    }*/
     @GetMapping(value = "/reportes/alertas/cantidad", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Long>> cantidadEventosCriticos() {
         long n = logService.cantidadEventosCriticos();  // <- sigue siendo funcional (stream + filter + count en el service)

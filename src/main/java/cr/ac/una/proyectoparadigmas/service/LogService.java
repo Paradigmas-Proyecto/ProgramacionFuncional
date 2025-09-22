@@ -51,15 +51,7 @@ public class LogService {
      * Los 3 errores más frecuentes en los registros.
      * Ejemplo de salida: [{500=12}, {404=5}, {400=3}]
      */
-   /* public List<Map.Entry<Integer, Long>> top3Errores() {
-        return logRepository.findAll().stream()
-                .filter(log -> log.getStatusCode() >= 400)
-                .collect(Collectors.groupingBy(LogEntry::getStatusCode, Collectors.counting()))
-                .entrySet().stream()
-                .sorted(Map.Entry.<Integer, Long>comparingByValue().reversed())
-                .limit(3)
-                .collect(Collectors.toList());
-    }*/
+
     public List<ErrorCount> top3Errores() {
         return logRepository.findAll().stream()
                 .filter(log -> log.getStatusCode() >= 400)
@@ -75,15 +67,7 @@ public class LogService {
      * Horas del día en las que se generaron más errores.
      * Ejemplo de salida: {0=1, 13=7, 18=12}
      */
-   /* public Map<Integer, Long> horasPicoErrores() {
-        return logRepository.findAll().stream()
-                .filter(log -> log.getStatusCode() >= 400)
-                .collect(Collectors.groupingBy(
-                        log -> log.getTimestamp().getHour(),
-                        Collectors.counting()
-                ));
-    }
-*/
+
     public Map<Integer, Long> horasPicoErrores() {
         return logRepository.findAll().stream()
                 .filter(l -> Optional.ofNullable(l.getStatusCode()).orElse(0) >= 400) // solo errores
@@ -104,28 +88,7 @@ public class LogService {
      * Estadísticas de los tiempos de respuesta: mínimo, máximo, promedio y mediana.
      * Ejemplo de salida: {"min"=10, "max"=900, "promedio"=140.5, "mediana"=120.0}
      */
-    /*public Map<String, Double> estadisticasTiempos() {
-        List<Long> tiempos = logRepository.findAll().stream()
-                .map(LogEntry::getTiempoRespuesta)
-                .sorted()
-                .toList();
 
-        if (tiempos.isEmpty()) return Map.of();
-
-        double promedio = tiempos.stream().mapToLong(Long::longValue).average().orElse(0);
-        double min = tiempos.get(0);
-        double max = tiempos.get(tiempos.size() - 1);
-        double mediana = (tiempos.size() % 2 == 0) ?
-                (tiempos.get(tiempos.size() / 2 - 1) + tiempos.get(tiempos.size() / 2)) / 2.0 :
-                tiempos.get(tiempos.size() / 2);
-
-        return Map.of(
-                "min", min,
-                "max", max,
-                "promedio", promedio,
-                "mediana", mediana
-        );
-    }*/
     public Map<String, Double> estadisticasTiempos() {
         List<Long> tiempos = logRepository.findAll().stream()
                 .map(l -> Optional.ofNullable(l.getTiempoRespuesta()).orElse(0L))
@@ -157,17 +120,11 @@ public class LogService {
         );
     }
 
-
-
     /**
      * Distribución de los tiempos de respuesta agrupados por endpoint.
      * Ejemplo de salida: {"/api/persona"=1234, "/api/logs"=879}
      */
-   /* public Map<String, Long> distribucionTiemposPorEndpoint() {
-        return logRepository.findAll().stream()
-                .collect(Collectors.groupingBy(LogEntry::getEndpoint,
-                        Collectors.summingLong(LogEntry::getTiempoRespuesta)));
-    }*/
+
     public Map<String, EndpointStats> distribucionTiemposPorEndpoint() {
         return logRepository.findAll().stream()
                 .collect(Collectors.groupingBy(
@@ -185,7 +142,6 @@ public class LogService {
                         )
                 ));
     }
-
 
     // ========= Reporte de Uso de Endpoints =========
 
@@ -209,25 +165,8 @@ public class LogService {
 
     // ========= Reporte de Alertas y Eventos Críticos =========
 
-    /**
-     * Lista de eventos críticos detectados.
-     * Consideramos críticos aquellos con status >= 500.
-     */
-   /* public List<LogEntry> eventosCriticos() {
-        return logRepository.findAll().stream()
-                .filter(log -> log.getStatusCode() >= 500)
-                .toList();
-    }
-*/
-    /**
-     * Cantidad de eventos críticos detectados.
-     */
-    /*public long cantidadEventosCriticos() {
-        return logRepository.findAll().stream()
-                .filter(log -> log.getStatusCode() >= 500)
-                .count();
-    }*/
-// helper privado
+
+    // helper privado
     private Predicate<LogEntry> esCritico() {
         return l -> "ERROR".equalsIgnoreCase(
                 Optional.ofNullable(l.getNivel()).orElse("")

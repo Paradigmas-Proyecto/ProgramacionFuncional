@@ -24,6 +24,7 @@ import java.util.logging.Logger;
  * - Guarda en base de datos un LogEntry por cada petición realizada.
  * - Mide el tiempo de respuesta real usando @Around.
  */
+
 @Aspect // Indica que esta clase es un Aspecto de AOP
 @Component // Indica que esta clase es un Componente de Spring
 public class PersonaAspect {
@@ -36,7 +37,7 @@ public class PersonaAspect {
 
     // ========= Antes de ejecutar savePersona =========
     /**
-     * Este método se ejecuta ANTES de que se invoque savePersona().
+     * Este metodo se ejecuta ANTES de que se invoque savePersona().
      * Solo escribe en los logs de consola.
      */
     @Before("execution(* cr.ac.una.proyectoparadigmas.controller.PersonaController.savePersona*(..))")
@@ -44,9 +45,9 @@ public class PersonaAspect {
         logger.info("Antes de ejecutar savePersona()");
     }
 
-    // ========= Después de ejecutar cualquier método =========
+    // ========= Después de ejecutar cualquier metodo =========
     /**
-     * Este método se ejecuta DESPUÉS de cualquier método de PersonaController.
+     * Este metodo se ejecuta DESPUÉS de cualquier metodo de PersonaController.
      * Solo escribe en los logs de consola.
      */
     @After("execution(* cr.ac.una.proyectoparadigmas.controller.PersonaController.*(..))")
@@ -56,12 +57,11 @@ public class PersonaAspect {
 
     // ========= Medición del tiempo de respuesta =========
     /**
-     * Este método rodea la ejecución de cualquier método de PersonaController.
+     * Este metodo rodea la ejecución de cualquier metodo de PersonaController.
      * - Calcula el tiempo real de ejecución.
      * - Guarda un LogEntry en la base de datos con toda la información.
      */
 
-    //cris
     private HttpServletRequest req() {
         ServletRequestAttributes atts = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         return atts != null ? atts.getRequest() : null;
@@ -72,33 +72,6 @@ public class PersonaAspect {
         return atts != null ? atts.getResponse() : null;
     }
 
-
-
-    /*@Around("execution(* cr.ac.una.proyectoparadigmas.controller.PersonaController.*(..))")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        long inicio = System.currentTimeMillis();
-
-        Object result = joinPoint.proceed(); // Ejecuta el método original
-
-        long fin = System.currentTimeMillis();
-        long tiempoRespuesta = fin - inicio;
-
-        // Crear un LogEntry y guardarlo en la base de datos
-        LogEntry log = new LogEntry();
-        log.setTimestamp(LocalDateTime.now());
-        log.setNivel("INFO");
-        log.setMensaje("Ejecutado: " + joinPoint.getSignature().getName());
-        log.setEndpoint("/api/persona"); // Se puede mejorar para obtener dinámicamente
-        log.setMetodoHttp("HTTP"); // Aquí también se podría capturar dinámicamente
-        log.setStatusCode(200); // Valor fijo, se puede refinar con @AfterReturning / @AfterThrowing
-        log.setTiempoRespuesta(tiempoRespuesta);
-
-        logRepository.save(log);
-
-        logger.info("Tiempo de respuesta (" + joinPoint.getSignature().getName() + "): " + tiempoRespuesta + " ms");
-
-        return result;
-    }*/
     //@Around("execution(* cr.ac.una.proyectoparadigmas.controller..*(..))")
     @Around("execution(* cr.ac.una.proyectoparadigmas.controller..*(..)) && " +
             "!@within(org.springframework.web.bind.annotation.RestControllerAdvice)")
